@@ -38,7 +38,7 @@ sample_file="/home/felipe/googledrive/Cancer_staging/sample.txt"
 exposure_file="/home/felipe/googledrive/Cancer_staging/exposure.txt"                                                  
 
 # Load data
-#clinical_data<-read.table(file = clinical_file, sep = '\t', header = TRUE,fill=TRUE)    
+clinical_data<-read.table(file = clinical_file, sep = '\t', header = TRUE,fill=TRUE)    
 sample_data<-read.table(file = sample_file, sep = '\t', header = TRUE,fill=TRUE)                                    
 exposure_data<-read.table(file = exposure_file, sep = '\t', header = TRUE,fill=TRUE)                                #
 
@@ -85,4 +85,8 @@ write_tsv(data.frame(merged_data_patient_info$File.Name), "/home/felipe/googledr
 #####################################################################################################################
 # table_stages_treatment_or_therapy
 table_stages_treatment_or_therapy<-table(merged_data_patient_info[merged_data_patient_info$project_id=="TCGA-BRCA","treatment_or_therapy"],merged_data_patient_info[merged_data_patient_info$project_id=="TCGA-BRCA","stages"])
-table_stages_treatment_or_therapy<-table(merged_data_patient_info[merged_data_patient_info$project_id=="TCGA-BRCA","stages"],merged_data_patient_info[merged_data_patient_info$project_id=="TCGA-BRCA","treatment_type"])
+table_stages_treatment_or_therapy<-table(merged_data_patient_info[merged_data_patient_info$project_id=="TCGA-BRCA","treatment_or_therapy"],merged_data_patient_info[merged_data_patient_info$project_id=="TCGA-BRCA","treatment_type"])
+
+# To do:
+# Take the name of variables from the portal and annotate them.
+# Select the obvious
